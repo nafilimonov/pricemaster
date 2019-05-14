@@ -1,0 +1,314 @@
+/* CSS Typography */
+/* Шрифт, размер и цвет текста для всего сайта */
+body {  
+  font-size: 12pt;
+  line-height: 1.7;
+  font-weight: 400;
+  color: rgb(0, 0, 0);
+  font-family: 'Circe', Arial, Helvetica, sans-serif;
+}
+
+@media only screen and (max-width : 767.98px) {
+  body {  
+    font-size: 11pt;
+  }
+}
+
+@media only screen and (max-width : 320px) {
+  body {  
+    font-size: 10pt;
+  }
+}
+
+/* Параграф */
+p {
+  margin: 5px 0 23px;
+}
+
+/* Малый и большой текст */
+.big {
+  font-size: 350%;
+}
+@media (max-width: 767.98px) {
+  .big {
+    font-size: 220%;
+  }
+}
+small,
+.small {
+  font-size: 85%;
+}
+.small-x {
+  font-size: 65%;
+}
+
+/* Выделение в тексте */
+mark,
+.mark {
+  background-color: #fcf8e3;
+  padding: .2em;
+}
+
+/* Выравнивание, cтили, трансформация, перенос */
+.text-justify {
+  text-align: justify !important;
+}
+
+.text-nowrap {
+  white-space: nowrap !important;
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+@media (min-width: 576px) {
+  .text-sm-left {
+    text-align: left !important;
+  }
+  .text-sm-right {
+    text-align: right !important;
+  }
+  .text-sm-center {
+    text-align: center !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .text-md-left {
+    text-align: left !important;
+  }
+  .text-md-right {
+    text-align: right !important;
+  }
+  .text-md-center {
+    text-align: center !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .text-lg-left {
+    text-align: left !important;
+  }
+  .text-lg-right {
+    text-align: right !important;
+  }
+  .text-lg-center {
+    text-align: center !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .text-xl-left {
+    text-align: left !important;
+  }
+  .text-xl-right {
+    text-align: right !important;
+  }
+  .text-xl-center {
+    text-align: center !important;
+  }
+}
+
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+
+.font-weight-light {
+  font-weight: 300 !important;
+}
+
+.font-weight-normal {
+  font-weight: 400 !important;
+}
+
+.font-weight-bold {
+  font-weight: 700 !important;
+}
+
+.font-italic {
+  font-style: italic !important;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+/* Цвет */
+.text-muted {
+  color: #777;
+}
+a.text-primary:hover,
+a.text-primary:focus {
+  color: #777;
+}
+.text-primary {
+  color: #337ab7;
+}
+a.text-primary:hover,
+a.text-primary:focus {
+  color: #286090;
+}
+.text-white {
+  color: #fff;
+}
+a.text-white:hover,
+a.text-white:focus {
+  color: #fff;
+}
+
+/* Списки */
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+/* Заголовки */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: .3pt;
+  line-height: 1.2;
+}
+h1,.h1{
+  font-size:280%;
+}
+h2,.h2 {
+  font-size:230%;
+}
+h3,.h3 {
+  font-size:160%;
+}
+h4,.h4 {
+  font-size:120%;
+}
+h5,.h5 {
+  font-size:100%;
+}
+h6,.h6 {
+  font-size:80%;
+}
+
+/* Ссылки */
+a, 
+.link {
+  color: rgb(0, 102, 153);
+  border-bottom: 1px solid rgba(0, 102, 153, 0.3);
+  text-decoration: none;
+
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+}
+
+.link-white, 
+.link.link-white {
+    color: rgb(245, 245, 245);
+    border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+.link-red, 
+.link.link-red {
+    color: rgb(224, 65, 66);
+    border-bottom-color: rgba(224, 65, 66, 0.5);
+}
+.link-black, 
+.link.link-black {
+    color: rgb(0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0.5);
+}
+
+.false {
+  border-bottom: 1px;
+  border-bottom-style: dashed;
+  border-bottom-color: rgba(0, 102, 153, 0.5);
+}
+
+.false.link-white {
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
+.false.link-red {
+  border-bottom-color: rgba(224, 65, 66, 0.5);
+}
+
+.false.link-black {
+  border-bottom-color: rgba(0, 0, 0, 0.5);
+}
+
+a:hover, 
+a:focus, 
+a.hover, 
+.link:hover, 
+.link:focus, 
+.link.hover {
+  color: rgb(208, 72, 72);
+  border-color: rgb(208, 72, 72);
+  text-decoration: none;
+}
+
+.link-white:hover, 
+.link-white:focus, 
+.link-white.hover, 
+.link.link-white:hover, 
+.link.link-white:focus, 
+.link.link-white.hover {
+    color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+a:not(.btn):active, 
+a.active, 
+.link:active, 
+.link.active {
+  border-bottom-width: 0;
+}
+
+a:active, 
+a:active *, 
+.link:active, 
+.link:active * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+a:visited {}
+
+
+a[disabled], 
+a.disabled, 
+.anchor[disabled] {
+  border: none;
+  cursor: default;
+  color: inherit;
+}

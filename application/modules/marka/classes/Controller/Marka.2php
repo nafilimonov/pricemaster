@@ -1,0 +1,148 @@
+<?php defined('SYSPATH') or die('No direct script access.');
+
+// DFunction::dump ($arResult);
+ 
+class Controller_Marka extends Controller_Core {
+ 
+	public function before()  {
+		parent::before();
+		//$this->template->current  = Model::factory('Marka')->GetUrl();
+  }
+	
+  // Главная страница
+  public function action_index() {
+		
+		$this->template->title = 'Марки';
+		$this->template->breadcrumb = array(
+			"/" => 'Главная',
+			$this->template->title,
+		);
+
+		$this->arParams["PAGE"] = $this->request->param('page');
+		//$this->arParams["URL"] = Model::factory('Marka')->GetUrl();
+    
+    $order = array("name", "ASC");
+		if (isset($_REQUEST["SORT_BY"]) && $_REQUEST["SORT_BY"] && $_REQUEST["SORT_ORDER"]) //edit 
+    {
+			$order = array($_REQUEST["SORT_BY"], $_REQUEST["SORT_ORDER"]);
+		}
+		$this->arResult = Model::factory('Marka')->GetList(false,$this->arParams["PAGE"]); // edit$this->arParams["NUM_PAGE"]
+		
+		$this->setContent('marka/main');
+	} 
+	
+	// форма добавить
+	public function action_add() 
+	{
+		$this->setContent('marka/add');
+	}
+	
+	public function action_item() 
+	{
+		if (  $id = $this->request->param('id') ) 
+		{
+			$this->arResult = end(Model::factory('Marka')->GetByID($id));
+			$suppliers = Model::factory('SupplierMarka')->GetMarkaSuppler($id);
+			
+			foreach ($suppliers as $supplier) {
+				$suppliers_in[] = $supplier['suppler_id'];
+			}
+			if (count($suppliers_in) > 0) {
+				$where[] = array ('id', 'IN', $suppliers_in); 
+				$this->arResult['suppliers'] = Model::factory('Supplier')->GetList($where);
+			}
+
+			$this->template->title = $this->arResult['name'];
+			$this->template->breadcrumb = array(
+				"/" => 'Главная',
+				"/marka/" => 'Марки',
+				$this->template->title
+			);
+		
+			$this->setContent('marka/item');
+		}
+		
+	}
+	
+	// форма редактировать
+	public function action_edit() {
+		if ($this->request->is_ajax()) 
+		{
+			if ( !empty($_REQUEST['id']) && $id = $_REQUEST['id']) 
+			{
+				$this->arResult = end(Model::factory('Marka')->GetByID($id));
+				$this->setContent('marka/edit');
+			}
+		}
+	}
+
+	// удалить
+	public function action_del() 
+	{
+		if ($this->request->is_ajax() && $id = $this->request->param('id')) 
+		{
+			if ( Model::factory('Marka')->Delete($id))
+				echo "true";
+			die();
+		}
+	}
+	
+  // удалить все
+	public function action_clear() 
+  {
+		/*чистим*/
+		Model::factory('Marka')->ClearTable();
+		$this->session->set('success', "Удалено успешно");
+		$this->redirect('marka');
+
+  }
+	
+	// ajax
+	public function action_ajax() {
+		if ($this->request->is_ajax()) {
+			
+			switch (htmlspecialchars($_REQUEST['action'])) {	
+					
+					// удалить списком
+	        case 'del': 
+						if (is_array($_REQUEST['id'])) {
+							foreach ($_REQUEST['id'] as $id) {
+								Model::factory('Marka')->Delete($id);
+							}
+							echo parent::getResultJsonArray("Y","Элементы удалены");
+						}
+	        	break;
+					
+					// добавить - сохранить
+					case 'add':  
+	        	
+						$arFields = $this->request->post();
+						$names = explode ("\n", $arFields["name"]);
+			
+						foreach ($names as $name) {
+							if (empty($name))
+								continue; 
+							$arAdd["name"] = DFunction::typograph($name);
+							Model::factory('Marka')->Add($arAdd);
+						}
+						echo parent::getResultJsonArray("Y");
+
+					break;
+					
+					// изменить  - сохранить
+					case 'edit':  
+	        	
+						$arFields = $this->request->post();
+						unset($arFields["action"]);
+						
+						$arFields["name"] = DFunction::typograph($arFields["name"]);
+						if (Model::factory('Marka')->Update($arFields, $arFields["id"]))
+							echo parent::getResultJsonArray("Y");
+						else
+							echo parent::getResultJsonArray();
+	        	break;
+			}
+		}
+  }
+ 
+} // End Page

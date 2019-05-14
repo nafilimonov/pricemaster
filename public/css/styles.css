@@ -1,0 +1,243 @@
+
+
+/*header*/
+.header {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+/*logo*/
+.logo {
+	line-height: 55px;
+}
+.logo .logo__img {
+	width: 100%;
+	max-width: 143px;
+}
+/*callback*/
+.callback {
+	display: table;
+	height: 55px;
+}
+.callback__addres,
+.callback__phone,
+.callback__call,
+.callback__nav {
+  display: table-cell;
+	vertical-align: middle;
+}
+.callback__nav,
+.callback__phone,
+.callback__call {
+	padding-left: 30px;
+}
+.callback__phone-text,
+.callback__addres-text {
+  font-size: 90%;
+}
+.callback__phone-text-primary {
+	font-size: 170%;
+	line-height: 1;
+}
+
+/*
+top-menu
+*/
+.top-menu {
+	position: relative;
+	float: none;
+	text-align: justify;
+	line-height: 0px;
+	margin-bottom: 0;
+	list-style: none;
+	height: 40px;
+	padding: 0 15px;
+	border-top: 1px solid #f1f1f1;
+	border-bottom: 1px solid #f1f1f1;
+	margin-top: 15px;
+}
+.top-menu__item {
+	position: relative;
+	display: inline-block;
+	float: none;
+	padding: 0px;
+}
+.top-menu__link {
+	line-height: 40px;
+	text-transform: uppercase;
+	padding: 0px;
+	border: none;
+	color: #393939;
+}
+.top-menu__sub {
+	display: none;
+	position: absolute;
+	left: -15px;
+	z-index: 5;
+	min-width: 300px;
+	padding: 10px 15px;
+	background: #777;
+}
+.top-menu__item:hover .top-menu__sub {
+	display: block;
+}
+.top-menu__sub-item {
+	text-align: left;
+}
+.top-menu__sub-link {
+	color: #FFF;
+	line-height: 25px;
+	text-transform: none;
+	border: none;
+}
+.top-menu__stretch{
+	display: inline-block;
+	width: 100%;
+	zoom: 1;
+	padding: 0px !important;
+}
+
+/*
+CONTACTS
+*/
+
+.contacts__name,
+.contacts__phone,
+.contacts__email,
+.contacts__addres,
+.contacts__work-time,
+.contacts__social {
+  margin-bottom: 30px;
+}
+.contacts__map {
+  height: 350px;
+  width: 100%;
+  margin-top: 30px;
+}
+.contacts__social-link {
+  color: transparent;
+  display: inline-block;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  opacity: 0.8
+}
+.contacts__social-link:hover {opacity: 1}
+.contacts__vk {background: #4a76a8}
+.contacts__instagram {background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);}
+.contacts__facebook {background: #4267b2}
+.contacts__odnoklassniki {background: #ee8208}
+.contacts__youtube {background: #f00}
+.contacts__google-plus {background: #db493c}
+.contacts__twitter {background: #1da1f2}
+.contacts__telegram {background: #2ca5e0}
+
+/*
+LENDING
+*/
+
+.block {
+	padding: 50px 0;
+}
+
+/*offer*/
+.offer {
+	background: #f1f1f1
+}
+.offer__title,
+.offer__second-title {
+	margin-bottom: 30px;
+}
+
+/*reasons-list*/
+.offer__reasons-list > li {
+    margin: 5px 0;
+}
+.offer__reasons-list > li > i {
+    margin-right: 10px;
+}
+
+/*reasons*/
+.reasons {
+	margin-top: 50px;
+}
+.reasons__item {}
+.reasons__title {
+	font-size: 130%; 
+	margin-bottom: 15px;
+}
+.reasons__img {
+	margin-bottom: 15px;
+}
+.reasons__img > i {
+	font-size: 300%;
+}
+.reasons__text {}
+@media only screen and (max-width : 768px) {
+	.reasons__item {margin-bottom: 30px;}
+}
+
+/* images-list */
+.images-list {}
+.images-list__item {
+    background: #000000;
+    width: 100%;
+    margin-bottom: 10px;
+    padding-top: 100%;
+    color: #FFF;
+    text-align: center;
+    display: block;
+    position: relative;
+	overflow: hidden
+}
+.images-list__item_border {
+    border-radius: 100%;
+}
+.images-list__item-img {
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    opacity: 0.3;
+    background-position: center center;
+}
+.images-list__item:hover .images-list__item-img {
+    opacity: 0.8;
+}
+.images-list__item-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 15;
+    border: none;
+    color: #FFF;
+}
+.images-list__item-link * {
+    margin: 0
+}
+.images-list__item-link strong {
+    display: block;
+}
+.images-list .row {
+	margin-left: -5px;
+	margin-right: -5px;
+}
+.images-list .col-md-4, images-list .col-lg-3 {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+@media only screen and (max-width: 480px) {
+	.images-list__item-link {
+    	font-size: 200%;
+    	line-height: 1.5;
+	}
+}
+
+

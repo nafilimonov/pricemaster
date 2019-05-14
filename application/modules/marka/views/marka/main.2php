@@ -1,0 +1,55 @@
+<?
+$oEdit = new Html_Edit();
+
+$table = array(
+	array(
+		'NAME' => "ID", 
+		'ROW' => "id", 
+		'WIDHT' => 5,
+		'SORT_BY' => "id"
+	),
+	array(
+		'NAME' => "Название", 
+		'ROW' => "name", 
+		'WIDHT' => 70,
+		'SORT_BY' => "name",
+		"save" => true,
+		'url' => "/item/"
+	),
+);
+
+$oEdit->Init(
+	Model::factory('Marka')->GetUrl(),
+	Model::factory('Marka')->GetFactory(),
+	$table,
+	$arResult,
+	$arParams
+);
+
+?>
+<div class="row">
+	<div class="col-xs-12">
+		<? $oEdit->Add(); ?>
+		<?/*<a href="<?=URL::site('/marka/clear/');?>" onclick="return confirmDelete();" class="btn btn-default">Очистить все</a>*/?>
+	</div>
+	<? if (!empty ($arErrors)):?>
+	<div class="col-xs-12">
+		<div class="alert alert-danger margin" role="alert"><?=$arErrors?></div>
+	</div>
+	<?endif;?> 
+	<? if (!empty ($arSuccess)):?>
+	<div class="col-xs-12">
+		<div class="alert alert-success margin" role="alert"><?=$arSuccess?></div>
+	</div>
+	<?endif;?> 
+	<div class="col-xs-12">
+	<? if (!empty ($arResult["items"])):?>
+
+		<? $oEdit->Table();?> 
+	<?else:?>
+		<div class="alert alert-warning margin" role="alert">Нет ни одной записи.</div>
+	<?endif;?> 
+	<? //DFunction::dump ($arResult);?>
+	<? //DFunction::dump ($arParams);?>
+	</div>
+</div>

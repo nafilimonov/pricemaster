@@ -1,0 +1,125 @@
+/* CSS General */
+
+/* Remove outline on the forms and links */
+:active, :hover, :focus {
+	outline: 0 !important;
+	outline-offset: 0 !important;
+}
+
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-thumb{border-width:1px 1px 1px 2px;border-color: #777;background-color: #aaa;}
+::-webkit-scrollbar-thumb:hover{border-width: 1px 1px 1px 2px;border-color: #555;background-color: #777;}
+::-webkit-scrollbar-track{border-width:0;}
+::-webkit-scrollbar-track:hover{background-color: #eee;}
+
+/*
+::-webkit-input-placeholder {color:#000;}
+::-moz-placeholder          {color:#000;}
+:-moz-placeholder           {color:#000;}
+:-ms-input-placeholder      {color:#000;}
+*/
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {	
+	min-width: 300px;
+	background-color: #fff;
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+/* Ajax loader */
+.ajax_loader {
+  background: url("../images/ajax-loader.GIF") no-repeat center center transparent;
+  width: 100%;
+  height: 100%;
+}
+.ajax_overlay {
+	width: 100%!important;
+  height: 100%!important;
+}
+
+/* Modal */
+.popup {
+  padding: 30px;
+  width: 500px;
+  display: none;
+}
+.popup_small {
+  width: 400px;
+}
+.popup_big {
+  width: 800px;
+}
+.popup .popup__header{}
+.popup .popup__content{}
+
+@media only screen and (max-width : 600px) {
+  .popup {
+    width: 400px !important;
+  }
+}
+
+@media only screen and (max-width : 480px) {
+  .popup {
+    width: 300px !important;
+  }
+}
+
+/* Notice */
+.notice {
+  padding: 8px 19px;
+  position: relative;
+  font-size: 13px;
+  line-height: 18px;
+  box-sizing: border-box;
+  background: #fff7cc;
+}
+.notice.notice-right:before {
+  content: "";
+  display: block;
+  border-right: 5px solid #fff7cc;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: none;
+  position: absolute;
+  top: 12px;
+  left: -5px;
+}
+.notice.notice-top:before {
+  content: "";
+  display: block;
+  border-right: 5px solid #fff7cc;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: none;
+  position: absolute;
+  top: 12px;
+  left: -5px;
+}
+
+
+/* Fancybox */
+
+
+/* Shadow */
+.shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+.shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+.shadow-lg {
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+.shadow-none {
+  box-shadow: none !important;
+}

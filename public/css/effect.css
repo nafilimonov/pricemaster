@@ -1,0 +1,141 @@
+/* CSS effect */
+.effect {
+  display: block;
+  position: relative;
+  overflow: hidden; 
+}
+.effect.hover-effect01 > img,
+.effect.hover-effect01 > .block-img {
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease; 
+}
+.effect.hover-effect01:hover > img,
+.effect.hover-effect01:hover > .block-img {
+  -webkit-transform: scale(1.1, 1.1);
+  -ms-transform: scale(1.1, 1.1);
+  -o-transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1); 
+}
+
+.effect.hover-effect02 {
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; 
+}
+.effect.hover-effect02:hover {
+  opacity: .7; 
+}
+
+.effect.hover-effect03 {
+  background-color: #222;
+  z-index: 1; 
+}
+.effect.hover-effect03:after, 
+.effect.hover-effect03:before {
+  -webkit-transition: opacity 0.35s, transform 0.35s;
+  -o-transition: opacity 0.35s, transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  content: '';
+  opacity: 0; 
+}
+.effect.hover-effect03:before {
+  -webkit-transform: scale(0, 1);
+  -ms-transform: scale(0, 1);
+  -o-transform: scale(0, 1);
+  transform: scale(0, 1);
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd; 
+}
+.effect.hover-effect03:after {
+  -webkit-transform: scale(1, 0);
+  -ms-transform: scale(1, 0);
+  -o-transform: scale(1, 0);
+  transform: scale(1, 0);
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd; 
+}
+.effect.hover-effect03:hover:after, 
+.effect.hover-effect03:hover:before {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  opacity: 1; 
+}
+.effect.hover-effect03:hover:after {
+  top: 15px;
+  bottom: 15px;
+  z-index: 100; 
+}
+.effect.hover-effect03:hover:before {
+  left: 15px;
+  right: 15px;
+  z-index: 99; 
+}
+.effect.hover-effect03:hover > img,
+.effect.hover-effect03:hover > .block-img {
+  opacity: 0.8; 
+}
+.effect.hover-effect03 > img,
+.effect.hover-effect03 > .block-img {
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease; 
+}
+
+.effect.hover-zoom {
+  -webkit-transform: scale(1,1);
+  -webkit-transition-timing-function: ease-out;
+  -webkit-transition-duration: 550ms;
+  -moz-transform: scale(1,1);
+  -moz-transition-timing-function: ease-out;
+  -moz-transition-duration: 550ms;
+}
+.effect.hover-zoom:hover {
+  -webkit-transform: scale(1.1,1.1);
+  -webkit-transition-timing-function: ease-out;
+  -webkit-transition-duration: 550ms;
+  -moz-transform: scale(1.1,1.1);
+  -moz-transition-timing-function: ease-out;
+  -moz-transition-duration: 550ms;
+}
+
+.effect.radiance:before {
+  margin-left: 60px;
+  content: "";
+  width: 30px;
+  height: 300px;
+  background: #fff;
+  animation-delay: 0.05s;
+  position: absolute;
+  left: -40px;
+  top: -150px;
+  animation-timing-function: ease-in-out;
+  transition: all 0.1s;
+  animation-name: radiance;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  transform: rotate(45deg);
+  opacity: 0.4;
+}
+
+@keyframes radiance {
+  0% {
+    left: -30px;
+    margin-left: 0px;
+  }
+  30% {
+    left: 110%;
+    margin-left: 80px;
+  }
+  100% {
+    left: 110%;
+    margin-left: 80px;
+  }
+}

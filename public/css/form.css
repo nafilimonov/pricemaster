@@ -1,0 +1,146 @@
+/* Form */
+
+/* Блок формы */
+.form-block {
+  background: #ffffff;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  position: relative;
+}
+
+/* Поля формы */ 
+input[type=text], 
+input[type=password], 
+input[type=email], 
+input[type=phone], 
+textarea, 
+select, 
+fieldset {
+  padding: 13px 16px;
+  font-weight: 400;
+  color: rgb(0, 0, 0);
+  width: 100%;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+input[type=text], 
+input[type=password], 
+input[type=email], 
+input[type=phone], 
+textarea, 
+select, 
+fieldset,
+.checkbox input[type="checkbox"] + label:after {
+  border: 1px solid transparent;
+  background: #f9f9f9;
+}
+.checkbox {
+  text-align: left;
+}
+.checkbox input[type="checkbox"] {
+  display: block;
+  width: 0;
+  line-height: 0;
+  visibility: hidden;
+  margin: 0;
+}
+.checkbox input[type="checkbox"] + label {
+  padding-left: 25px;
+  position: relative;
+  z-index: 100;
+  cursor: pointer;
+  outline: none;
+  display: inline-block;
+}
+.checkbox input[type="checkbox"] + label:after {
+  content: "";
+  display: block;
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  left: 0;
+  top: 5px;
+  z-index: 2;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 12px;
+  text-align: center;
+  line-height: 16px;
+  color: #fff;
+}
+.checkbox input[type="checkbox"]:checked + label:after {
+  content: "\f00c";
+  background: #2196f3;
+}
+
+/* Группировка  */
+.form-group {
+	margin-bottom: 15px;
+  position: relative;
+}
+
+/* Иконка для поля */
+.fluid-label {
+  position: relative;
+}
+.fluid-label textarea,
+.fluid-label input{
+  padding-left: 40px
+}
+.fluid-label i {
+  color: #d8d8d8;
+  position: absolute;
+  left: 15px;
+  top: 18px;
+}
+
+/* Обязательное поле */
+.form-req {
+  color: #e02222;
+  margin-left: 3px;
+  font-weight: 400;
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+/* Validate */
+.validate label.error { 
+  display:block; 
+  line-height:1.8; 
+  vertical-align:top; 
+  color: #000; 
+  font-style: italic; 
+  font-size:12px; 
+  font-weight: normal;
+  color: #e62222!important;
+  font-size: 10px;
+  position: absolute !important;
+  top: 0;
+  right: 5px;
+  font-weight: 400;
+}
+.validate input.error,
+.validate textarea.error { 
+  border: 1px solid #DB1905!important;
+}
+
+/* Результат отправки формы */
+.form-ajax__result {
+  max-width: 600px;
+}
+.form-ajax__result_error.form-ajax__result {
+  position: relative;
+  padding: .75rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  margin: 1rem auto;
+}
